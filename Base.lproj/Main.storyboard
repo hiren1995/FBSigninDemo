@@ -18,6 +18,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LNT-EE-YEN">
+                                <rect key="frame" x="16" y="552" width="343" height="48"/>
+                                <color key="backgroundColor" red="0.26784221617489723" green="0.51775199728601251" blue="0.77481379533678751" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="J3u-aJ-AcF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Login With Facebook">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="LoginFB:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fEr-wJ-8SB"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vhY-9K-R07">
                                 <rect key="frame" x="87" y="20" width="200" height="200"/>
                                 <color key="backgroundColor" red="0.77481379530000005" green="0.77481379530000005" blue="0.77481379530000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -45,22 +64,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Access Token : Please Login First" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bJa-R6-HVq">
-                                <rect key="frame" x="16" y="354" width="343" height="218"/>
+                                <rect key="frame" x="16" y="354" width="343" height="179"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="218" id="m0b-dI-pio"/>
+                                    <constraint firstAttribute="height" constant="179" id="m0b-dI-pio"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LNT-EE-YEN">
-                                <rect key="frame" x="16" y="591" width="343" height="48"/>
-                                <color key="backgroundColor" red="0.26784221617489723" green="0.51775199728601251" blue="0.77481379533678751" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wDf-Mg-WgJ">
+                                <rect key="frame" x="16" y="608" width="343" height="48"/>
+                                <color key="backgroundColor" red="1" green="0.58406490870000005" blue="0.2506698852" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="J3u-aJ-AcF"/>
+                                    <constraint firstAttribute="height" constant="48" id="C27-7b-OYd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <state key="normal" title="Login With Facebook">
+                                <state key="normal" title="Logout From Facebook">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -69,7 +88,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="LoginFB:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fEr-wJ-8SB"/>
+                                    <action selector="LoginFB:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AXU-JO-zFe"/>
+                                    <action selector="btnLogout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T25-XK-JqO"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -79,11 +99,14 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LNT-EE-YEN" secondAttribute="trailing" constant="16" id="1jt-Kl-MwB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SiF-qD-XCv" secondAttribute="trailing" constant="16" id="30e-sf-OTC"/>
                             <constraint firstItem="LNT-EE-YEN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="7Zn-sm-1mG"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LNT-EE-YEN" secondAttribute="bottom" constant="28" id="ASO-GF-NEf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LNT-EE-YEN" secondAttribute="bottom" constant="67" id="ASO-GF-NEf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="vhY-9K-R07" secondAttribute="bottom" constant="-200" id="OhH-2a-dJp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wDf-Mg-WgJ" secondAttribute="trailing" constant="16" id="Wes-uo-37A"/>
+                            <constraint firstItem="wDf-Mg-WgJ" firstAttribute="top" secondItem="LNT-EE-YEN" secondAttribute="bottom" constant="8" id="YEc-pZ-fHc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VbQ-6V-erL" secondAttribute="trailing" constant="16" id="b2L-S7-5MF"/>
                             <constraint firstItem="vhY-9K-R07" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="c9U-cl-z2M"/>
                             <constraint firstItem="bJa-R6-HVq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="cta-Os-crH"/>
+                            <constraint firstItem="wDf-Mg-WgJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="dKc-bo-lbR"/>
                             <constraint firstItem="VbQ-6V-erL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="epu-Sh-RoX"/>
                             <constraint firstItem="SiF-qD-XCv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="esP-bW-wcG"/>
                             <constraint firstItem="SiF-qD-XCv" firstAttribute="top" secondItem="VbQ-6V-erL" secondAttribute="bottom" constant="20" id="o4E-o9-LTb"/>

@@ -25,23 +25,34 @@ class ViewController: UIViewController {
     @IBOutlet weak var lblAccessToken: UITextView!
     
     
+    let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //This code is for entering credentials again and again when click on login with facebook...by this we can also sign in using different account...
+        
+        //fbLoginManager.loginBehavior = FBSDKLoginBehavior.web
        
     }
 
     @IBAction func LoginFB(_ sender: UIButton) {
         
-        let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
+        
         fbLoginManager.logIn(withReadPermissions: ["email","public_profile","user_friends"], from: self) { (result, error) -> Void in
             if (error == nil){
                 let fbloginresult : FBSDKLoginManagerLoginResult = result!
                 
                 print(result)
                 
+                
+                
                 // if user cancel the login
                 if (result?.isCancelled)!{
+                    
                     return
                 }
                 if(fbloginresult.grantedPermissions.contains("email")){
@@ -75,7 +86,24 @@ class ViewController: UIViewController {
                     }
                 }
             }
-        }
+            }
+    }
+    
+    
+    @IBAction func btnLogout(_ sender: UIButton) {
+        
+        profilePic.image = nil
+        profilePic.backgroundColor = UIColor.gray
+        
+        lblAccessToken.text = "Name : Please Login First"
+        lblEmail.text = "Email : Please Login First"
+        lblName.text = "Access Token : Please Login First"
+        
+        
+        fbLoginManager.logOut()
+        
+        print("Logout")
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
